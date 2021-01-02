@@ -12,7 +12,10 @@ import {
 } from "@material-ui/core";
 
 import Menu from "@material-ui/core/Menu";
+import DashboardIcon from "@material-ui/icons/Dashboard";
 import MenuItem from "@material-ui/core/MenuItem";
+import LockOpenIcon from "@material-ui/icons/LockOpen";
+import VpnKeyIcon from "@material-ui/icons/VpnKey";
 
 import { Home, Dehaze } from "@material-ui/icons";
 
@@ -29,6 +32,11 @@ const menuItems: Array<listItem> = [
     listIcon: <Home />,
     listText: "Home",
     link: "/",
+  },
+  {
+    listIcon: <DashboardIcon />,
+    listText: "Dashboard",
+    link: "/dashboard",
   },
 ];
 
@@ -51,8 +59,8 @@ export const Navbar: React.FC<any> = () => {
 
   return (
     <React.Fragment>
-      <Box component='nav' className={classes.Nav}>
-        <AppBar position='relative' className={classes.appBarStyles}>
+      <Box component="nav" className={classes.Nav}>
+        <AppBar position="relative" className={classes.appBarStyles}>
           <Toolbar className={classes.toolbarStyles}>
             {/* Desktop Navbar */}
             <div className={classes.navbarContainer}>
@@ -79,14 +87,46 @@ export const Navbar: React.FC<any> = () => {
                 );
               })}
             </div>
+            <div className={classes.navbarContainer}>
+              <NavLink
+                exact={true}
+                activeClassName={classes.navbarActive}
+                to={"/login"}
+              >
+                <ListItem>
+                  <ListItemIcon className={classes.listItem}>
+                    {<LockOpenIcon />}
+                  </ListItemIcon>
+                  <ListItemText
+                    className={classes.listItem}
+                    primary={"Login"}
+                  />
+                </ListItem>
+              </NavLink>
+              <NavLink
+                exact={true}
+                activeClassName={classes.navbarActive}
+                to={"/register"}
+              >
+                <ListItem>
+                  <ListItemIcon className={classes.listItem}>
+                    {<VpnKeyIcon />}
+                  </ListItemIcon>
+                  <ListItemText
+                    className={classes.listItem}
+                    primary={"Register"}
+                  />
+                </ListItem>
+              </NavLink>
+            </div>
 
             {/* Mobile Navbar */}
             <div className={classes.toggleSlider}>
               <IconButton
-                aria-controls='simple-menu'
+                aria-controls="simple-menu"
                 className={classes.toggleSlider}
                 onClick={handleClick}
-                value='mobileMenu'
+                value="mobileMenu"
               >
                 <ListItemIcon className={classes.toggleButton}>
                   <Dehaze />
@@ -119,7 +159,7 @@ export const Navbar: React.FC<any> = () => {
                         activeClassName={classes.sidebarActive}
                         to={item.link}
                       >
-                        <div className='MuiListItem-root MuiListItem-gutters'>
+                        <div className="MuiListItem-root MuiListItem-gutters">
                           <ListItemIcon className={classes.listItem}>
                             {item.listIcon}
                           </ListItemIcon>
@@ -132,6 +172,42 @@ export const Navbar: React.FC<any> = () => {
                     </MenuItem>
                   );
                 })}
+                <MenuItem onClick={handleClose}>
+                  <NavLink
+                    exact={true}
+                    className={classes.menuLink}
+                    activeClassName={classes.sidebarActive}
+                    to={"/login"}
+                  >
+                    <ListItem>
+                      <ListItemIcon className={classes.listItem}>
+                        {<LockOpenIcon />}
+                      </ListItemIcon>
+                      <ListItemText
+                        className={classes.listItem}
+                        primary={"Login"}
+                      />
+                    </ListItem>
+                  </NavLink>
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                  <NavLink
+                    exact={true}
+                    className={classes.menuLink}
+                    activeClassName={classes.sidebarActive}
+                    to={"/register"}
+                  >
+                    <ListItem>
+                      <ListItemIcon className={classes.listItem}>
+                        {<VpnKeyIcon />}
+                      </ListItemIcon>
+                      <ListItemText
+                        className={classes.listItem}
+                        primary={"Register"}
+                      />
+                    </ListItem>
+                  </NavLink>
+                </MenuItem>
               </Menu>
             </div>
           </Toolbar>

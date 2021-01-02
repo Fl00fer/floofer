@@ -1,0 +1,26 @@
+#AdminDashboard {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 65px);
+  width: 100vw;
+}
+
+#AdminDashboard h1 {
+  color: rgb(0, 0, 0);
+  font-size: 2rem;
+  margin: 5px;
+}
+
+@media only screen and (min-width: 615px) {
+  #AdminDashboard h1 {
+    font-size: 5rem;
+  }
+}
+
+@media only screen and (min-width: 410px) {
+  #AdminDashboard h1 {
+    font-size: 3rem;
+  }
+}

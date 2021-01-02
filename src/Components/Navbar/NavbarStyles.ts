@@ -20,6 +20,7 @@ export const useStyles = makeStyles((theme) => ({
     "& button:hover": {
       borderBottom: "1px solid rgb(240, 240, 240)",
     },
+    justifyContent: "space-between",
   },
   listItem: {
     color: "rgb(240, 240, 240)",
