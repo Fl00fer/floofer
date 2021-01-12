@@ -2,7 +2,7 @@ import React from "react";
 import {
   NotFound,
   Home,
-  Navbar,
+  // Navbar,
   UserDashboard,
   AdminDashboard,
   Auth,
@@ -17,7 +17,7 @@ import {
 const Routes: React.FC<any> = () => {
   return (
     <Router>
-      <Navbar />
+      {/* <Navbar /> */}
       <Switch>
         <Route exact path="/" render={(props: any) => <Home />} />
         {/* If User */}

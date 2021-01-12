@@ -1,9 +1,9 @@
 #Home {
   position: fixed;
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: calc(100vh - 65px);
+  flex-direction: column;
+  height: 100vh;
   width: 100vw;
 }
 
@@ -11,6 +11,45 @@
   color: rgb(0, 0, 0);
   font-size: 2rem;
   margin: 5px;
+}
+
+#Home img {
+  max-width: 80vw;
+  max-height: 40vh;
+}
+
+#Home .cat {
+  margin-right: auto;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#Home .dog {
+  margin-left: auto;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#Home a {
+  position: relative;
+}
+
+#Home p {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media only screen and (min-width: 1000px) {
+  #Home .cat {
+    margin-left: 25vw;
+  }
+
+  #Home .dog {
+    margin-right: 25vw;
+  }
 }
 
 @media only screen and (min-width: 615px) {
