@@ -1,1 +1,10 @@
-{}
+{
+  "auth": {
+    "flooferclient5697443a": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

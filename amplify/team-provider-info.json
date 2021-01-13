@@ -10,6 +10,11 @@
       "StackName": "amplify-flooferclient-dev-115604",
       "StackId": "arn:aws:cloudformation:us-west-2:738298153797:stack/amplify-flooferclient-dev-115604/363bab90-5510-11eb-8dfd-066c7dab677f",
       "AmplifyAppId": "d11u67na2ml18s"
+    },
+    "categories": {
+      "auth": {
+        "flooferclient5697443a": {}
+      }
     }
   }
 }
